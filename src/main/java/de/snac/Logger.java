@@ -35,7 +35,10 @@ public class Logger {
         log(clazz.getClass(), log, LogLevel.ERROR, throwable, null, format);
     }
 
-    public static<T> void log(@Nullable Class<?> clazz, @NotNull String log, @NotNull LogLevel level, @Nullable Throwable throwable, @Nullable PrintStream steam, @NotNull Object... format) {
+    public static<T> void log(T clazz, @NotNull String log, @NotNull LogLevel level, @Nullable Throwable throwable, @Nullable PrintStream steam, @NotNull Object... format) {
+        log(clazz.getClass(), log, level, throwable, steam, format);
+    }
+    public static void log(@Nullable Class<?> clazz, @NotNull String log, @NotNull LogLevel level, @Nullable Throwable throwable, @Nullable PrintStream steam, @NotNull Object... format) {
         LocalDateTime time = LocalDateTime.now();
         int hours = time.getHour();
         int minutes = time.getMinute();

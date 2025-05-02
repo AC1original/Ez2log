@@ -57,19 +57,19 @@ Add the following to your `pom.xml`:
 ### Logging an `INFO` message:
 
 ```java
-Logger.info(MyClass.class, "This is an info log message");
+Logger.info(this, "This is an info log message");
 ```
 
 ### Logging a `WARNING` message:
 
 ```java
-Logger.warn(MyClass.class, "This is a warning log message");
+Logger.warn(this, "This is a warning log message");
 ```
 
 ### Logging an `ERROR` message:
 
 ```java
-Logger.error(MyClass.class, "This is an error log message");
+Logger.error(this, "This is an error log message");
 ```
 
 ### Logging with formatting:
@@ -81,7 +81,7 @@ Logger.info(MyClass.class, "User %s has logged in", username);
 ### Logging with a Throwable:
 
 ```java
-Logger.error(MyClass.class, "An error occurred", throwable);
+Logger.error(this, "An error occurred", throwable);
 ```
 
 ## Advanced
@@ -89,7 +89,7 @@ Logger.error(MyClass.class, "An error occurred", throwable);
 If you want to log with a custom `PrintStream`, you can use the base `log(...)` method directly:
 
 ```java
-Logger.log(MyClass.class, "Custom output stream", LogLevel.INFO, null, myPrintStream);
+Logger.log(this, "Custom output stream", LogLevel.INFO, null, myPrintStream);
 ```
 
 Note: This feature is only available via the generic `log(...)` method, not through `info(...)`, `warn(...)`, or `error(...)`.
