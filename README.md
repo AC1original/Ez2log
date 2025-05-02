@@ -57,31 +57,31 @@ Add the following to your `pom.xml`:
 ### Logging an `INFO` message:
 
 ```java
-Logger.info(this, "This is an info log message");
+Ez2Log.info(this, "This is an info log message");
 ```
 
 ### Logging a `WARNING` message:
 
 ```java
-Logger.warn(this, "This is a warning log message");
+Ez2Log.warn(this, "This is a warning log message");
 ```
 
 ### Logging an `ERROR` message:
 
 ```java
-Logger.error(this, "This is an error log message");
+Ez2Log.error(this, "This is an error log message");
 ```
 
 ### Logging with formatting:
 
 ```java
-Logger.info(MyClass.class, "User %s has logged in", username);
+Ez2Log.info(MyClass.class, "User %s has logged in", username);
 ```
 
 ### Logging with a Throwable:
 
 ```java
-Logger.error(this, "An error occurred", throwable);
+Ez2Log.error(this, "An error occurred", throwable);
 ```
 
 ## Advanced
@@ -89,7 +89,7 @@ Logger.error(this, "An error occurred", throwable);
 If you want to log with a custom `PrintStream`, you can use the base `log(...)` method directly:
 
 ```java
-Logger.log(this, "Custom output stream", LogLevel.INFO, null, myPrintStream);
+Ez2Log.log(this, "Custom output stream", LogLevel.INFO, null, myPrintStream);
 ```
 
 Note: This feature is only available via the generic `log(...)` method, not through `info(...)`, `warn(...)`, or `error(...)`.
