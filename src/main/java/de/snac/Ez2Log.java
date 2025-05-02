@@ -6,7 +6,7 @@ import java.io.PrintStream;
 import java.time.LocalDateTime;
 import java.util.IllegalFormatException;
 
-public class Logger {
+public class Ez2Log {
 
     public static<T> void info(@NotNull T clazz, @NotNull String log, @NotNull Object... format) {
         log(clazz.getClass(), log, LogLevel.INFO, null, null, format);
