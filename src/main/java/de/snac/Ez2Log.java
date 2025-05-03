@@ -35,10 +35,10 @@ public class Ez2Log {
         log(clazz.getClass(), log, LogLevel.ERROR, throwable, null, format);
     }
 
-    public static<T> void log(T clazz, @NotNull String log, @NotNull LogLevel level, @Nullable Throwable throwable, @Nullable PrintStream steam, @NotNull Object... format) {
-        log(clazz.getClass(), log, level, throwable, steam, format);
+    public static<T> void log(T clazz, @NotNull String log, @NotNull LogLevel level, @Nullable Throwable throwable, @Nullable PrintStream stream, @NotNull Object... format) {
+        log(clazz.getClass(), log, level, throwable, stream, format);
     }
-    public static void log(@Nullable Class<?> clazz, @NotNull String log, @NotNull LogLevel level, @Nullable Throwable throwable, @Nullable PrintStream steam, @NotNull Object... format) {
+    public static void log(@Nullable Class<?> clazz, @NotNull String log, @NotNull LogLevel level, @Nullable Throwable throwable, @Nullable PrintStream stream, @NotNull Object... format) {
         LocalDateTime time = LocalDateTime.now();
         int hours = time.getHour();
         int minutes = time.getMinute();
@@ -51,16 +51,16 @@ public class Ez2Log {
             log += " [log-message formatting failed]";
         }
 
-        if (steam == null) {
-            steam = level.fail ? System.err : System.out;
+        if (stream == null) {
+            stream = level.fail ? System.err : System.out;
         }
 
         String message = String.format("[LOGGER/%s/%s/%d:%d:%d:%d] %s %s", level.name(), Thread.currentThread().getName(), hours, minutes, seconds, milli,
                 clazz == null ? "" : clazz.getSimpleName() + ":", log);
 
-        steam.println(message);
+        stream.println(message);
         if (throwable != null) {
-            throwable.printStackTrace(steam);
+            throwable.printStackTrace(stream);
         }
     }
 
