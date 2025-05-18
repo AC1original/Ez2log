@@ -27,7 +27,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.github.AC1original:Ez2log:-SNAPSHOT'
+    implementation 'com.github.AC1original:Ez2log:main-SNAPSHOT'
 }
 ```
 
@@ -47,7 +47,7 @@ Add the following to your `pom.xml`:
     <dependency>
         <groupId>com.github.AC1original</groupId>
         <artifactId>Ez2log</artifactId>
-        <version>-SNAPSHOT</version>
+        <version>main-SNAPSHOT</version>
     </dependency>
 </dependencies>
 ```
